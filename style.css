@@ -2,6 +2,9 @@
 :root{
     --primary-color: #cdffe1;
     --secondary-color: #ccc8c5;
+    --hover-color: #f58d80;
+    --shadow: 2px 2px 10px grey;
+    --transition: all 0.3s linear;
 }
 ul{
     list-style-type: none;
@@ -12,55 +15,88 @@ body{
 }
 
 nav{
-
-
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
 }
 .navHeader{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--primary-color);
     padding: 1rem;
 }
 .toggle{
     font-size: 2rem;
     background: transparent;
     border-color: transparent;
-
+    transition: var(--transition);
+    
 }
 .logo{
     height: 50px;
     
 }
 
-.links{
-    height: 0;
+.socialMedia {
+    display: none;
 }
 
-@media screen and (min-width: 700px){
+.links a{
+    padding: 1rem;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    transition: var(--transition);
+    display: flex;
+    font-family: Helvetica;
+    font-weight: 545;
+}
+
+.links{
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.show-links {
+    height: 15rem;
+  }
+
+@media screen and (min-width: 750px){
     .center{
         width: 1000px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
         margin: 0 auto;
         padding: 1rem;
-        
+        align-items: center;
+        justify-content: space-between;      
     }
     .navHeader{
-
+        padding: 1rem;
     }  
     .toggle{
-        display: none;
-         
+        display: none; 
     }
     .links{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        height:auto;
     }
     .links a{
         margin: 1rem;
+        text-transform: capitalize;
+        font-size: 1.8rem;
+        font-family: sans-serif;
+        text-decoration: none !important;
     }
-    
+    .links a:hover{
+        color: var(--hover-color);
+    }
+    .socialMedia{
+        display: flex;
+    }
+    .socialMedia a{
+        height: auto;
+        margin: 1rem;
+    }
+    .socialMedia a:hover{
+        color: var(--hover-color);
+    }
 }
